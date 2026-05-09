@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 10px;
+    margin: 0px;
+    background-color: #222222;
+    color: #ffeeee;
+    width: calc(100dvw - 20px);
+    height: calc(100dvh - 20px);
+}
+
+form {
+    font-size: 14pt;
+}
+@media (width < 600px) {
+    form {
+        font-size: 12pt;
+    }
+}
+
+form input {
+    font-size: inherit;
+}
+
+form input[type="checkbox"] {
+    height: 20px;
+    width: 20px;
+}

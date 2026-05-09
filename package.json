@@ -1,0 +1,27 @@
+{
+  "name": "randomconvex",
+  "module": "src/index.ts",
+  "type": "module",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test": "bun test",
+    "build": "vite build",
+    "release": "vite build",
+    "start": "vite"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@sveltejs/adapter-static": "^3.0.10",
+    "@sveltejs/vite-plugin-svelte": "^6.2.4",
+    "@types/web": "^0.0.345",
+    "svelte": "^5.55.5",
+    "vite": "^7.3.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "fabric": "^7.3.1"
+  }
+}
