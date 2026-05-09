@@ -33,3 +33,11 @@ Access the server with modern browser.
 Press 'generate'.
 
 Options are placed in the side bar.
+
+
+## Output samples
+![sample9](./doc/img/randomConvexOutput%20(9).jpg "sample 9")
+![sample10](./doc/img/randomConvexOutput%20(10).jpg "sample 10")
+![sample11](./doc/img/randomConvexOutput%20(11).jpg "sample 11")
+![sample13](./doc/img/randomConvexOutput%20(13).jpg "sample 13")
+
