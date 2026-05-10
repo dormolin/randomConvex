@@ -5,7 +5,7 @@ import path from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [svelte()],
-  base: '/',
+  base: 'https://dormolin.github.io/randomConvex/',
   resolve: {
     alias: {
       '@': path.resolve('/src'),
