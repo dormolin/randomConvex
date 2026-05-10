@@ -1,6 +1,10 @@
 # randomConvex
 place convexes randomly
 
+## Try it
+Access [demo page](https://dormolin.github.io/randomConvex/) and press generate button.
+
+
 ## How to build
 To install dependencies:
 
