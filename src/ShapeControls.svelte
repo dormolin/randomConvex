@@ -40,10 +40,11 @@
             <summary>Canvas</summary>
             width:  <input type="number" name="canvasWidth"  min="0" max="4096" step="1" onchange={onSizeChange} bind:value={width}><br>
             height: <input type="number" name="canvasHeight" min="0" max="4096" step="1" onchange={onSizeChange} bind:value={height}><br>
-            bg color:  <input type="color"  name="canvasColor"  onchange={onBgColorChange} bind:value={bgColor}>
+            bg color:  <input type="color"  name="canvasColor"  onchange={onBgColorChange} bind:value={bgColor}><br>
         </details>
         <details>
             <summary>Shape</summary>
+            editable: <input type="checkbox" name="shapesEditable" bind:checked={options.editable} /><br>
             number: <input type="number" name="number" bind:value={options.number} max="10000" min="0" step="1"><br>
             polygon corners: <input type="number" name="polygonCorners" bind:value={options.polygonCorners} max="100" min="3" step="1"><br>
             min size: <input type="number" name="minSize" bind:value={options.minSize} min="0" max="1000"><br>
