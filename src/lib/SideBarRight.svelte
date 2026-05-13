@@ -1,5 +1,5 @@
 <script lang="ts">
-    let hidden = $state(false);
+    let hidden = $state(true);
     let { children } = $props();
 </script>
 
