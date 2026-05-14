@@ -53,6 +53,8 @@ export class RandomConvex {
         left: randomInt(0, canvas.getWidth() - Width/ 2),
         top: randomInt(0, canvas.getHeight() - Height / 2),
         angle: options.randomRotate ? randomInt(0, 360) : 0,
+        evented: options.editable,
+        selectable: options.editable
       })
       rect.set("shadow", {
         blur: options.shadowBlur, color: options.shadowColorSameAsFill ? rect.fill : options.shadowColor,
@@ -164,6 +166,7 @@ export class RandomConvex {
 export class RandomConvexOptions {
     number: number = 100
     polygonCorners: number = 4
+    editable = true
     minSize: number = 30
     maxSize = 50
     symmetry = true
