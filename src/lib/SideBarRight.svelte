@@ -25,6 +25,7 @@
         overflow: auto;
         width: 300px;
         transition-property: width;
+        transition-timing-function: ease-out;
         transition-duration: 0.4s;
     }
 
