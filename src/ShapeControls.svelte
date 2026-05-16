@@ -11,7 +11,6 @@
     let width = $state(450);
     let height = $state(300);
     let bgColor = $state('#ffffff');
-    let hide = $state(false);
 
     const onSizeChange = (event: Event) => {
         if (canvas) {
