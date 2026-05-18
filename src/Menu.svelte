@@ -4,6 +4,7 @@
     let { canvas, app, options, ...props }
         : { canvas?: fabric.Canvas, app?: RandomConvex, options?: RandomConvexOptions } = $props();
     let dlg: HTMLDialogElement;
+    let clearDlg: HTMLDialogElement;
     let saveFormat: 'jpeg' | 'svg' = $state('jpeg');
     let saveQuality = $state(0.95);
 
@@ -12,7 +13,10 @@
         app._generateConvex(app.canvas, options?? new RandomConvexOptions());
     };
 
+    const onClearDlgOpen = (event: Event) => clearDlg.showModal();
+
     const onClear = (event: Event) => {
+        clearDlg.close();
         if (!canvas) return;
         const bg = canvas.backgroundColor;
         canvas.clear();
@@ -53,7 +57,7 @@
 
 <form class="RandomConvexInput">
     <button type="button" onclick={onGenerate}>generate</button>
-    <button type="button" onclick={onClear}>clear</button>
+    <button type="button" onclick={onClearDlgOpen}>clear</button>
     <button type="button" onclick={onDelete}>delete</button>
     <button type="button" onclick={onSaveDlgOpen}>save</button>
 </form>
@@ -71,6 +75,12 @@
     <hr>
     <button type="button" onclick={onCancelSave}>Cancel</button>
     <button type="button" onclick={onSave}>OK</button>
+</dialog>
+<dialog bind:this={clearDlg}>
+    <p>Clear canvas?</p>
+    <hr>
+    <button type="button" onclick={() => clearDlg.close()}>Cancel</button>
+    <button type="button" onclick={onClear}>OK</button>
 </dialog>
 
 
