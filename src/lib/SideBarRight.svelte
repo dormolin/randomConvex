@@ -1,14 +1,14 @@
 <script lang="ts">
-    let hidden = $state(false);
     let { children } = $props();
 </script>
 
 
-<div class="hideable Sidebar {hidden ? 'hidden' : ''}">
+<div class="hideable Sidebar">
     <div>
         <label class="maxHeight SideBarShow">
-            {hidden ? '◀' : '▶'}
-            <input type="checkbox" bind:checked={hidden} />
+            <input id="HideButton" type="checkbox" checked />
+            <span class="CheckVisible">◀</span>
+            <span class="CheckInvisible">▶</span>
         </label>
     </div>
     <div>
@@ -25,6 +25,7 @@
         overflow: auto;
         width: 300px;
         transition-property: width;
+        transition-timing-function: ease-out;
         transition-duration: 0.4s;
     }
 
@@ -44,11 +45,21 @@
         flex-direction: row;
     }
 
-    .hidden {
+    .hideable:has(#HideButton:checked) {
         width: 30px;
+        overflow-x: hidden;
+    }
+
+    input[type="checkbox"]:checked ~ .CheckInvisible {
+        display: none;
+    }
+
+    input[type="checkbox"]:not(:checked) ~ .CheckVisible {
+        display: none;
     }
 
     label > input {
         display: none;
     }
+
 </style>
