@@ -9,7 +9,7 @@
 
     const onGenerate = (event: Event) => {
         if (!app) return;
-        app._generateConvex(app.canvas, options?? new RandomConvexOptions());
+        app.generateConvex(app.canvas, options?? new RandomConvexOptions());
     };
 
     const onClear = (event: Event) => {

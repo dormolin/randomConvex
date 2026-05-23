@@ -28,9 +28,7 @@ export class RandomConvex {
     }
   }
 
-  /// private members ///////////////////////////////////////////////////////////////
-
-  _generateConvex = (canvas: fabric.Canvas, options: RandomConvexOptions) => {
+  generateConvex = (canvas: fabric.Canvas, options: RandomConvexOptions) => {
     const storeRenderSetting = canvas.renderOnAddRemove
     canvas.renderOnAddRemove = false
     for (let i = 0; i < options.number; i++) {
@@ -68,6 +66,9 @@ export class RandomConvex {
     canvas.requestRenderAll()
   }
 
+
+  /// private members ///////////////////////////////////////////////////////////////
+
   _shiftColor = (refColor: string) => {
     const c = parseColor(refColor)
     return `rgb(${c.r + 64},${c.g + 64},${c.b + 64})`
@@ -96,9 +97,11 @@ export class RandomConvex {
     return array.map(x => x * k, 0)
   }
   
-  // if random rotate, returns ranom number 0 - 2PI
-  // If nPoints is odd number, first point should be top.
-  // Otherwise, horizontal line should be top.
+  /**
+   * if random rotate, returns ranom number 0 - 2PI
+   * If nPoints is odd number, first point should be top.
+   * Otherwise, horizontal line should be top.
+   */ 
   _firstAngleOffset = (nPoints: number, randomRotate = false) => {
     if (randomRotate) {
       return Math.random() * 2 * Math.PI
@@ -163,6 +166,9 @@ export class RandomConvex {
 }
 
 
+/**
+ * parameters of RandomConvex.generate
+ */
 export class RandomConvexOptions {
     number: number = 100
     polygonCorners: number = 4
