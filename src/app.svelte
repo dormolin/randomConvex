@@ -20,9 +20,11 @@
 <div class="MainMenuContainer">
     <Menu canvas={canvas} app={app} options={options}></Menu>
     <div class="MainSubContainer">
-        <div class="CanvasContainer">
+    <div class="CanvasContainer">
+        <div class="CanvasMargin">
             <canvas id="MainCanvas" bind:this={canvasEl} width="450" height="300"></canvas>
         </div>
+    </div>
         <ShapeControls bind:options={options} canvas={canvas}></ShapeControls>
     </div>
 </div>
@@ -44,7 +46,6 @@
         border-color: #cccccc;
         border-width: 1px;
         background-color: #ffffff;
-        margin: 50px;
     }
 
     .MainSubContainer {
@@ -60,6 +61,12 @@
         width: 100%;
         height: 100%;
         overflow: auto;
+    }
+
+    .CanvasMargin {
+        padding: 50px;
+        width: fit-content;
+        background-color: #333333;
     }
 
     .MainMenuContainer {
