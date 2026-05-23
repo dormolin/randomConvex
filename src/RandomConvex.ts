@@ -191,4 +191,8 @@ export class RandomConvexOptions {
     shadowColorSameAsFill = false
     shadowOffsetX = 5
     shadowOffsetY = 5
+
+    constructor (params: Partial<RandomConvexOptions>) {
+      Object.assign(this, params)
+    }
 }
