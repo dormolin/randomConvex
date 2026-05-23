@@ -23,7 +23,7 @@
         <div class="CanvasContainer">
             <canvas id="MainCanvas" bind:this={canvasEl} width="450" height="300"></canvas>
         </div>
-        <ShapeControls options={options} canvas={canvas}></ShapeControls>
+        <ShapeControls bind:options={options} canvas={canvas}></ShapeControls>
     </div>
 </div>
 

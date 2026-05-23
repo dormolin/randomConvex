@@ -40,8 +40,12 @@ Options are placed in the side bar.
 
 
 ## Output samples
-![sample9](./doc/img/randomConvexOutput%20(9).jpg "sample 9")
-![sample10](./doc/img/randomConvexOutput%20(10).jpg "sample 10")
-![sample11](./doc/img/randomConvexOutput%20(11).jpg "sample 11")
-![sample13](./doc/img/randomConvexOutput%20(13).jpg "sample 13")
+### preset confetti
+![confetti](./doc/img/confetti.jpg "confetti")
+### preset snow
+![snow](./doc/img/snow.jpg "snow")
+### preset radar
+![radar](./doc/img/radar.jpg "radar")
+### preset rubberband
+![rubberband](./doc/img/rubberband.jpg "rubberband")
 

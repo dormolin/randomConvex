@@ -1,9 +1,10 @@
 <script lang="ts">
     import * as fabric from 'fabric'
     import { RandomConvexOptions } from './RandomConvex.ts'
+    import { confetti, snow, radar, rubberband } from './presetOptions.ts';
     import SideBarRight from './lib/SideBarRight.svelte'
 
-    let {options, canvas, ...props}
+    let {options = $bindable(), canvas, ...props}
         : {options: RandomConvexOptions,
             canvas?: fabric.Canvas
         } = $props();
@@ -28,6 +29,30 @@
             canvas.requestRenderAll();
         }
     }
+
+    const onPresetSelect = (event: Event & {currentTarget: HTMLSelectElement}) => {
+        const value = event.currentTarget.value;
+        switch (value) {
+            case 'confetti':
+                options = confetti;
+                break;
+            case 'snow':
+                options = snow;
+                bgColor = '#000000';
+                canvas.backgroundColor = bgColor;
+                canvas.requestRenderAll();
+                break;
+            case 'radar':
+                options = radar;
+                bgColor = '#002200';
+                canvas.backgroundColor = bgColor;
+                canvas.requestRenderAll();
+                break;
+            case 'rubberband':
+                options = rubberband;
+                break;
+        }
+    }
 </script>
 
 
@@ -35,6 +60,16 @@
 <SideBarRight>
     <form>
         <h3>option</h3>
+        <details>
+            <summary>Preset</summary>
+            <select onchange={onPresetSelect}>
+                <option value='' selected>N.A.</option>
+                <option value='confetti'>confetti</option>
+                <option value='snow'>snow</option>
+                <option value='radar'>radar</option>
+                <option value='rubberband'>rubber band</option>
+            </select>
+        </details>
         <details>
             <summary>Canvas</summary>
             width:  <input type="number" name="canvasWidth"  min="0" max="4096" step="1" onchange={onSizeChange} bind:value={width}><br>
