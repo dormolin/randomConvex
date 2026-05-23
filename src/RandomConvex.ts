@@ -192,7 +192,9 @@ export class RandomConvexOptions {
     shadowOffsetX = 5
     shadowOffsetY = 5
 
-    constructor (params: Partial<RandomConvexOptions>) {
-      Object.assign(this, params)
+    constructor (params?: Partial<RandomConvexOptions>) {
+      if (params) {
+        Object.assign(this, params)
+      }
     }
 }
