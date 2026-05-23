@@ -6,7 +6,7 @@
     let dlg: HTMLDialogElement;
     let clearDlg: HTMLDialogElement;
     let saveFormat: 'jpeg' | 'svg' = $state('jpeg');
-    let saveQuality = $state(0.95);
+    let saveQuality = $state(0.97);
 
     const onGenerate = (event: Event) => {
         if (!app) return;
