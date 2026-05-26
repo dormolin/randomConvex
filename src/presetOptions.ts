@@ -13,12 +13,14 @@ export const confetti = new RandomConvexOptions({
 })
 
 export const snow = new RandomConvexOptions({
-    minSize: 6,
+    minSize: 5,
     maxSize: 8,
-    polygonCorners: 20,
+    polygonCorners: 25,
     fillColor: '#ffffff',
+    opacity: 75,
     randomColor: false,
-    shadowBlur: 2,
+    borderWidth: 0,
+    shadowBlur: 6,
     shadowColor: '#ffffff',
     shadowOffsetX: 0,
     shadowOffsetY: 0,
