@@ -51,3 +51,12 @@ export const rubberband = new RandomConvexOptions({
     shadowOffsetX: 3,
     shadowOffsetY: 3
 })
+
+export const chemical = new RandomConvexOptions({
+    number: 30,
+    polygonCorners: 6,
+    borderColor: '#008800',
+    borderWidth: 3,
+    shadowBlur: 0,
+    shadowColor: 'transparent'
+})
