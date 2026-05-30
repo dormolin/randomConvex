@@ -1,6 +1,4 @@
-import { RandomConvexOptions } from "./RandomConvex";
-
-export const confetti = new RandomConvexOptions({
+export const confetti = {
     number: 75,
     minSize: 5,
     maxSize: 10,
@@ -10,21 +8,23 @@ export const confetti = new RandomConvexOptions({
     shadowOffsetX: 0,
     shadowOffsetY: 0,
     shadowBlur: 0
-})
+}
 
-export const snow = new RandomConvexOptions({
-    minSize: 6,
+export const snow = {
+    minSize: 5,
     maxSize: 8,
-    polygonCorners: 20,
+    polygonCorners: 25,
     fillColor: '#ffffff',
+    opacity: 75,
     randomColor: false,
-    shadowBlur: 2,
+    borderWidth: 0,
+    shadowBlur: 6,
     shadowColor: '#ffffff',
     shadowOffsetX: 0,
     shadowOffsetY: 0,
-})
+}
 
-export const radar = new RandomConvexOptions({
+export const radar = {
     number: 15,
     polygonCorners: 3,
     minSize: 15,
@@ -36,9 +36,9 @@ export const radar = new RandomConvexOptions({
     shadowColor: '#ff0000',
     shadowOffsetX: 0,
     shadowOffsetY: 0
-})
+}
 
-export const rubberband = new RandomConvexOptions({
+export const rubberband = {
     number: 30,
     randomRotate: true,
     polygonCorners: 30,
@@ -48,4 +48,13 @@ export const rubberband = new RandomConvexOptions({
     perfectCircle: false,
     shadowOffsetX: 3,
     shadowOffsetY: 3
-})
+}
+
+export const chemical = {
+    number: 30,
+    polygonCorners: 6,
+    borderColor: '#008800',
+    borderWidth: 3,
+    shadowBlur: 0,
+    shadowColor: 'transparent'
+}

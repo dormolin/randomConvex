@@ -1,7 +1,7 @@
 <script lang="ts">
     import * as fabric from 'fabric'
     import { RandomConvexOptions } from './RandomConvex.ts'
-    import { confetti, snow, radar, rubberband } from './presetOptions.ts';
+    import { confetti, snow, radar, rubberband, chemical } from './presetOptions.ts';
     import SideBarRight from './lib/SideBarRight.svelte'
 
     let {options = $bindable(), canvas, ...props}
@@ -34,22 +34,27 @@
         const value = event.currentTarget.value;
         switch (value) {
             case 'confetti':
-                options = confetti;
+                options = new RandomConvexOptions(confetti);
                 break;
             case 'snow':
-                options = snow;
+                options = new RandomConvexOptions(snow);
                 bgColor = '#000000';
+                if (!canvas) break;
                 canvas.backgroundColor = bgColor;
                 canvas.requestRenderAll();
                 break;
             case 'radar':
-                options = radar;
+                options = new RandomConvexOptions(radar);
                 bgColor = '#002200';
+                if (!canvas) break;
                 canvas.backgroundColor = bgColor;
                 canvas.requestRenderAll();
                 break;
             case 'rubberband':
-                options = rubberband;
+                options = new RandomConvexOptions(rubberband);
+                break;
+            case 'chemical':
+                options = new RandomConvexOptions(chemical);
                 break;
         }
     }
@@ -68,6 +73,7 @@
                 <option value='snow'>snow</option>
                 <option value='radar'>radar</option>
                 <option value='rubberband'>rubber band</option>
+                <option value='chemical'>chemical</option>
             </select>
         </details>
         <details>
