@@ -55,6 +55,8 @@
         padding: 8px;
         display: grid;
         grid-template-columns: 1fr auto;
+        height: 100%;
+        overflow: auto;
     }
 
     .CanvasContainer {
@@ -73,5 +75,6 @@
         display: grid;
         grid-template-rows: auto 1fr;
         height: calc(95dvh - 40px);
+        overflow: auto;
     }
 </style>
