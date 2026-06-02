@@ -1,6 +1,7 @@
 <script lang="ts">
     import * as fabric from 'fabric';
     import { RandomConvex, RandomConvexOptions } from './RandomConvex';
+    import Zoom from './lib/zoom.svelte';
     let { canvas, app, options, ...props }
         : { canvas?: fabric.Canvas, app?: RandomConvex, options?: RandomConvexOptions } = $props();
     let dlg: HTMLDialogElement;
@@ -59,7 +60,8 @@
     <button type="button" onclick={onGenerate}>generate</button>
     <button type="button" onclick={onClearDlgOpen}>clear</button>
     <button type="button" onclick={onDelete}>delete</button>
-    <button type="button" onclick={onSaveDlgOpen}>save</button>
+    <button type="button" onclick={onSaveDlgOpen}>save</button><br>
+    <Zoom canvas={canvas}></Zoom>
 </form>
 <dialog bind:this={dlg}>
     <label>
