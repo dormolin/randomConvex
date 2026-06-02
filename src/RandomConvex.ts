@@ -9,6 +9,7 @@ import { offset } from './lib/offset';
 
 /**
  * Drawing random convexes on Canvas.
+ * note: convexes are not defined by strict matmematics.
  */
 export class RandomConvex {
   canvas: fabric.Canvas
@@ -17,7 +18,6 @@ export class RandomConvex {
     this.canvas = new fabric.Canvas(canvasEl);
     this.canvas.backgroundColor = '#eee';
     this.canvas.on('object:moving', this._onObjectMoving);
-    // this.canvas.on('mouse:wheel', this._onMouseWheel);
     this.canvas.requestRenderAll();
   }
 
@@ -29,25 +29,16 @@ export class RandomConvex {
     }
   }
 
-  _onMouseWheel = (opt: any) => {
-    const e = opt.e;
-    const delta = e.deltaY;
-    let zoom = this.canvas.getZoom();
-    zoom *= 0.999 ** delta;
-    if (zoom > 20) zoom = 20;
-    if (zoom < 0.1) zoom = 0.1;
-    this.canvas.setZoom(zoom);
-    const w2 = this.canvas.getWidth() / 4;
-    const h2 = this.canvas.getHeight() / 4;
-    const p = new fabric.Point(e.offsetX + w2, e.offsetY + h2);
-    this.canvas.absolutePan(p);
-    e.preventDefault();
-    e.stopPropagation();
-  }
-
+  /**
+   * generate random convexes
+   * @param canvas 
+   * @param options 
+   */
   generateConvex = (canvas: fabric.Canvas, options: RandomConvexOptions) => {
     const storeRenderSetting = canvas.renderOnAddRemove
     canvas.renderOnAddRemove = false
+    const zoom = canvas.getZoom()
+
     for (let i = 0; i < options.number; i++) {
       const Width = randomInt(options.minSize, options.maxSize)
       const Height = options.perfectCircle ? Width: randomInt(options.minSize, options.maxSize)
@@ -65,8 +56,8 @@ export class RandomConvex {
         opacity: options.opacity / 100,
         originX: 'center',
         originY: 'center',
-        left: randomInt(0, canvas.getWidth() - Width/ 2),
-        top: randomInt(0, canvas.getHeight() - Height / 2),
+        left: randomInt(0, canvas.getWidth() / zoom - Width/ 2),
+        top: randomInt(0, canvas.getHeight() / zoom - Height / 2),
         angle: options.randomRotate ? randomInt(0, 360) : 0,
         evented: options.editable,
         selectable: options.editable
@@ -79,6 +70,7 @@ export class RandomConvex {
       if ((!options.fillTransparent) && options.gradation) this._applyGradient(rect)
       this.canvas.add(rect)
     }
+
     canvas.renderOnAddRemove = storeRenderSetting
     canvas.requestRenderAll()
   }
