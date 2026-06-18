@@ -58,3 +58,12 @@ export const chemical = {
     shadowBlur: 0,
     shadowColor: 'transparent'
 }
+
+export const fancy = {
+    number: 50,
+    polygonCorners: 30,
+    minSize: 20,
+    maxSize: 40,
+    borderWidth: 0,
+    shadowColorSameAsFill: true
+}
