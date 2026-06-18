@@ -7,8 +7,7 @@ body {
     margin: 0px;
     background-color: #222222;
     color: #ffeeee;
-    width: calc(100dvw - 20px);
-    height: calc(100dvh - 20px);
+    overflow-y: hidden;
 }
 
 form {

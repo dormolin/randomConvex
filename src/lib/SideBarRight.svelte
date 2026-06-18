@@ -47,7 +47,7 @@
 
     .hideable:has(#HideButton:checked) {
         width: 30px;
-        overflow-x: hidden;
+        overflow: hidden;
     }
 
     input[type="checkbox"]:checked ~ .CheckInvisible {
