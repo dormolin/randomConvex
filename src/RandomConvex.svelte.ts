@@ -207,3 +207,7 @@ export class RandomConvexOptions {
       }
     }
 }
+
+export const store = $state({
+  options: new RandomConvexOptions()
+});

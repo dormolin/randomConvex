@@ -3,12 +3,12 @@
     import Menu from './Menu.svelte'
     import ShapeControls from './ShapeControls.svelte'
     import { onMount } from 'svelte';
-    import { RandomConvex, RandomConvexOptions } from './RandomConvex';
+    import { RandomConvex, store } from './RandomConvex.svelte.ts';
 
     let app = $state<RandomConvex>();
     let canvas = $state<fabric.Canvas>();
     let canvasEl: HTMLCanvasElement;
-    let options: RandomConvexOptions = $state(new RandomConvexOptions());
+    let options = $derived(store.options);
 
     onMount(() => {
         app = new RandomConvex(canvasEl);

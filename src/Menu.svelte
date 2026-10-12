@@ -1,6 +1,6 @@
 <script lang="ts">
     import * as fabric from 'fabric';
-    import { RandomConvex, RandomConvexOptions } from './RandomConvex';
+    import { RandomConvex, RandomConvexOptions } from './RandomConvex.svelte.ts';
     import Zoom from './lib/zoom.svelte';
     let { canvas, app, options, ...props }
         : { canvas?: fabric.Canvas, app?: RandomConvex, options?: RandomConvexOptions } = $props();
