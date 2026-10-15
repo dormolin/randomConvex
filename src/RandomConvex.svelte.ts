@@ -179,27 +179,27 @@ export class RandomConvex {
  * parameters of RandomConvex.generate
  */
 export class RandomConvexOptions {
-    number: number = 100
-    polygonCorners: number = 4
-    editable = true
-    minSize: number = 30
-    maxSize = 50
-    symmetry = true
-    randomRotate = false
-    perfectCircle = true
-    fillColor = '#888888'
-    fillTransparent = false
-    opacity = 90
-    randomColor = true
-    gradation = true
-    borderColor = '#000000'
-    borderRandomColor = false
-    borderWidth = 1
-    shadowBlur = 5
-    shadowColor = '#333333'
-    shadowColorSameAsFill = false
-    shadowOffsetX = 5
-    shadowOffsetY = 5
+    number: number = $state(100)
+    polygonCorners: number = $state(4)
+    editable = $state(true)
+    minSize: number = $state(30)
+    maxSize = $state(50)
+    symmetry = $state(true)
+    randomRotate = $state(false)
+    perfectCircle = $state(true)
+    fillColor = $state('#888888')
+    fillTransparent = $state(false)
+    opacity = $state(90)
+    randomColor = $state(true)
+    gradation = $state(true)
+    borderColor = $state('#000000')
+    borderRandomColor = $state(false)
+    borderWidth = $state(1)
+    shadowBlur = $state(5)
+    shadowColor = $state('#333333')
+    shadowColorSameAsFill = $state(false)
+    shadowOffsetX = $state(5)
+    shadowOffsetY = $state(5)
 
     constructor (params?: Partial<RandomConvexOptions>) {
       if (params) {

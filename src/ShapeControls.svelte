@@ -64,7 +64,6 @@
 </script>
 
 
-<!-- svelte-ignore binding_property_non_reactive -->
 <SideBarRight>
     <form>
         <h3>option</h3>
