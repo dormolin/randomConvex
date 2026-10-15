@@ -1,6 +1,6 @@
 <script lang="ts">
     import * as fabric from 'fabric'
-    import { RandomConvexOptions } from './RandomConvex.ts'
+    import { RandomConvexOptions } from './RandomConvex.svelte.ts'
     import { confetti, snow, radar, rubberband, chemical, fancy } from './presetOptions.ts';
     import SideBarRight from './lib/SideBarRight.svelte'
 
@@ -64,7 +64,6 @@
 </script>
 
 
-<!-- svelte-ignore binding_property_non_reactive -->
 <SideBarRight>
     <form>
         <h3>option</h3>

@@ -1,5 +1,5 @@
 import { test, expect } from 'bun:test';
-import { RandomConvexOptions } from '../src/RandomConvex';
+import { RandomConvexOptions } from '../src/RandomConvex.svelte';
 
 
 test('randomConvexOptions', () => {
